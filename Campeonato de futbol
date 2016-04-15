@@ -1,0 +1,51 @@
+Proceso sin_titulo
+	cont_partidos <- 0
+	cont_ganados <- 0
+	cont_perdidos <- 0
+	cont_empatados <- 0
+	acum_favor <- 0
+	acum_contra <- 0
+	cont_puntos <- 0
+	
+	Repetir
+		Escribir "Partido ",cont_partidos + 1;
+		Escribir "Ingresar goles a favor";
+		Leer goles_f;
+		Escribir "Ingresar goles en contra";
+		Leer goles_c;
+		cont_partidos <- cont_partidos + 1
+		Si (goles_f > goles_c) Entonces
+			acum_favor <- acum_favor + goles_f
+			cont_puntos <- cont_puntos + 3
+			cont_ganados <- cont_ganados + 1
+		Sino
+			Si (goles_f < goles_c) Entonces
+				acum_contra <- acum_contra + goles_c
+				cont_perdidos <- cont_perdidos + 1
+			Sino
+				cont_puntos <- cont_puntos + 1
+				cont_empatados <- cont_empatados + 1
+			FinSi
+		FinSi
+	Hasta Que( cont_partidos = 10 ) 
+	dif <- acum_favor - acum_contra;
+	Escribir "El total de goles a favor son: ", acum_favor;
+	Escribir "El total de goles en contra son: ", acum_contra;
+	Escribir "El total de puntos es de: ", cont_puntos;
+	Escribir "Ganaron ",cont_ganados," partidos";
+	Escribir "Perdieron ",cont_perdidos," partidos";
+	Escribir "Empataron ",cont_empatados," partidos";
+	Escribir "La diferencia de goles es: ",dif;
+	
+	Si (cont_puntos < 10)
+		Escribir "Clasificacion a Liguilla de Promocion";
+	Sino
+		Si (cont_puntos > 20)
+			Escribir "Clasificacion a Liguilla de Campeonato";
+		Sino
+			Escribir "No Clasifica a Liguilla";
+		FinSi
+	FinSi
+	
+	
+FinProceso
