@@ -1,0 +1,33 @@
+
+package Cap5 ;
+
+import static java.lang.Math.sqrt;
+import java.util.Scanner;
+
+public class Cap5_2 {
+    public static void main (String [] args) {
+        Scanner intro = new Scanner (System.in);
+        int x1 = 0;
+        int y1 = 0;
+        int x2 = 0;
+        int y2 = 0;
+        System.out.println ("Ingrese valor de x del primer punto");
+        x1 = intro.nextInt ();
+        System.out.println ("Ingrese valor de y del primer punto");
+        y1 = intro.nextInt ();
+        // Primer punto listo
+        System.out.println ("Ingrese valor de x del segundo punto");
+        x2 = intro.nextInt ();
+        System.out.println ("Ingrese valor de y del segundo punto");
+        y2 = intro.nextInt ();
+        // Segundo punto listo
+        double distancia = sqrt((x2 - x1)^2 + (y2 - y1)^2);
+        // Distancia
+        System.out.println ("La distancia de los dos puntos es de: "+distancia);
+        double ecuacion = x2 - x1 / y2 - y1 ;
+        // Ecuacion de la recta
+        System.out.println ("La ecuacion de la recta es: "+ ecuacion);
+        
+    }
+    
+}
